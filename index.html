@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <title>C A C # F L I X</title>
 </head>
 <body>
@@ -18,13 +20,28 @@
                 <i class="fa-solid fa-clapperboard fa-flip"></i>
                 <span>C A C # F L I X</span>
             </a>
-            <ul>
-                <li><a href="#">Tendencias</a></li>
-                <li><a href="#"></a>Registrarse</li>
-                <li><a href="#"></a>Iniciar Sesion</li>
+            <ul class="listaNav">
+                <li class="listaItem"><a href="#tendencias" class="linkNav">Tendencias</a></li>
+                <li class="listaItem"><a href="#" class="linkNav">Registrarse</a></li>
+                <li class="listaItem"><a href="#" class="linkNav iniciarSesion">Iniciar Sesion</a></li>
             </ul>
         </nav>
     </header>
-    
+    <main id="main" class="main">
+        <section data-aos="zoom-in" data-aos-duration="1000"  class="sectionPrincipal">
+            <h1 class="tituloPrincipal">Películas y series ilimitadas <br>en un solo lugar</h1>
+            <h2 class="subtituloPrincipal">Disfruta donde quieras. <br> Cancela en cualquier momento.</h2>
+            <a href="#">Registrate</a>
+        </section>
+        <section>
+            <h2> ¿Qué estás buscando parar ver?</h2>
+            <form>
+                <input type="text" placeholder="Buscar...">
+                <input type="submit" value="Buscar">
+            </form>
+
+        </section>
+    </main>
+
 </body>
 </html>
