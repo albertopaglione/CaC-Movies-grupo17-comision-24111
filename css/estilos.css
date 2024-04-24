@@ -141,6 +141,7 @@ header{
             font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
             &:hover{
                 background-color: brown;
                 transform: scale(0.95);
@@ -201,4 +202,5 @@ header{
         }
        
     }
+    
 }
