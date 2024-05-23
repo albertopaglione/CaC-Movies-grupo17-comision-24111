@@ -37,6 +37,9 @@ header{
             color: white;
             font-weight: 700;
             font-size: 1.2rem;
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
         }
 
         .listaNav{
@@ -46,7 +49,6 @@ header{
             
             .listaItem{
                 margin-right: 20px;
-                
                 .linkNav{
                     color: white;
                     text-decoration: none;
@@ -172,7 +174,7 @@ header{
                 border: 2px solid white;
                 border-radius: 25px;
                 color: #ffffff;
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 height: 50px;
                 margin: 20px 0px;
                 outline: none;
@@ -202,5 +204,190 @@ header{
         }
        
     }
-    
+    .peliculasTendencia{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+        .tituloSection{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+
+        }
+        .peliculas{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 60px;
+            a{
+                text-decoration: none;
+                color: white;
+                .pelicula{
+                    width: 200px;
+                    height: 300px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    transition: all 0.5s ease;
+
+                    .imgTendencia{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 10px;
+
+                    }
+                    .tituloPelicula{
+                        z-index: 2;
+                        position: absolute;
+                        text-align: center;
+                        top: 50%;
+                        left: 50%;
+                        max-width: 20rem;
+                        width: 100%;
+                        transform: translateY(-50%) translateX(-50%);
+                        h4{
+                            font-size: 2rem;
+                            font-weight: bold;
+                            opacity: 0;
+                            margin-bottom: 0.5rem;
+                            letter-spacing: 0.1rem;
+                            transition: opacity 0.5s ease-in-out;
+                        }
+                        
+
+                    }
+                    &:hover{
+                        box-shadow: 0 0 30px cyan;
+                        transform: scale(1.1);
+                    }
+                    &:hover h4{
+                        opacity: 1;
+                        
+                    }
+                    &:hover::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                        background-color: #9f3648;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+        .boton{
+            border: 1px solid white;
+            box-sizing: content-box;
+            margin-top: 50px;
+            margin-left: 20px;
+            background-color: #9f3647;
+            color: #ffffff;
+            padding: 1rem 1rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin-bottom: 60px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            &:hover{
+                background-color: #9f3647;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3)
+            }
+        }
+    }
+}
+
+.bodyRegistrarse{
+    height: 100vh;
+    background: linear-gradient(to right top, #24242473, #24242473),url("../img/bg-register.jpg");
+    background-size: cover;
+    background-position: center;
+    .headerRegistrarse{
+        color: #ffffff;
+        height: 8vh;
+        padding: 30px;
+        .anclaLogo{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+
+            }
+        }
+    }
+    .main{
+        .seccionRegistrarse{
+            background-color: rgb(42, 42, 42);
+            width: 30%;
+            margin:0 auto;
+            border-radius: 5px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-size: 1.2rem;
+            .tituloRegistrarse{
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+
+            }
+            form{
+                width: 100%;
+                padding: 40px;
+                input:not(.check,.boton), select{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    height: 40px;
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 20px;
+                    border: 2px solid #9f3647;
+                    background-color: #333333;
+                    outline: none;
+                    color: white;
+                }
+                .terminos{
+                    font-size: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    .textoCheck{
+                        margin-left: 10px;
+                    }
+                }
+                .boton{
+                    width: 87%;
+                    box-sizing: content-box;
+                    background-color: #9f3647;
+                    border: 2px solid #9f3647;
+                    color: #ffffff;
+                    padding: 1rem 1rem;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    font-weight: 500;
+
+                }
+                .ayuda{
+                    margin-top: 40px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: #787878;
+                    font-weight: 400;
+                    
+                }
+            }
+
+        }
+    }
 }
