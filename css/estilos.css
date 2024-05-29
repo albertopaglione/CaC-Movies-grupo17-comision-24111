@@ -10,7 +10,28 @@
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
 
+::-webkit-scrollbar-track {
+    background: rgb(23, 23, 23);
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #9f3647;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background:#9f3647;
+}
 body{
     background-color: black;
     color: white;
@@ -19,7 +40,7 @@ body{
 header{
     background-color: brown;
     color: white;
-    height: 12vh;
+    height: 10vh;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -77,6 +98,18 @@ header{
 
                     }
                 
+                }
+                .linkNav.conectApi{
+                    background-color: black;
+                    color: white;
+                    border-radius: 5px;
+                    &:hover{
+                        background-color: brown;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                        border-radius: 5px;
+
+                    }
                 }
             }
         }
@@ -309,6 +342,7 @@ header{
     background-size: cover;
     background-position: center;
     .headerRegistrarse{
+        background-color: transparent;
         color: #ffffff;
         height: 8vh;
         padding: 30px;
@@ -326,20 +360,21 @@ header{
     .main{
         .seccionRegistrarse{
             background-color: rgb(42, 42, 42);
-            width: 30%;
+            width: 40%;
             margin:0 auto;
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 90vh;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             .tituloRegistrarse{
                 font-size: 2.5rem;
                 font-weight: 700;
                 margin-bottom: 20px;
+                color: #ffffff;
 
             }
             form{
@@ -357,6 +392,15 @@ header{
                     outline: none;
                     color: white;
                 }
+                .error input:not(.check,.boton),.error select{
+                    border: 2px solid #ff0000;
+                }
+                .error-text{
+                    color: #ff0000;
+                    font-size: 0.8rem;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                }
                 .terminos{
                     font-size: 0.8rem;
                     display: flex;
@@ -367,7 +411,7 @@ header{
                     }
                 }
                 .boton{
-                    width: 87%;
+                    width: 80%;
                     box-sizing: content-box;
                     background-color: #9f3647;
                     border: 2px solid #9f3647;
@@ -390,4 +434,51 @@ header{
 
         }
     }
+}
+@media (max-width: 950px) {
+    .bodyRegistrarse{
+        .headerRegistrarse{
+            padding:30px;
+            .anclaLogo{
+                font-size: 1rem;
+            }
+        }
+        .main{
+            .seccionRegistrarse{
+                width: 95%;
+                padding: 10px 10px;
+                .tituloRegistrarse{
+                    font-size: 3rem;
+                }
+               form{
+                width: 100%;
+                text-align: center;
+               
+                input:not(.check,.boton),select{
+                    width: 80%;
+                    height: 35px;
+                    font-size: 1rem;
+                }
+                .terminos{
+                    width: 80%;
+                    margin:0 auto;
+                    font-size: 0.7rem;
+                }
+                .boton{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 70%;
+                    padding: 0.8rem 0.8rem;
+                    font-size: 1rem;
+                }
+                .ayuda{
+                    text-align: left;
+                    font-size: 1rem;
+                }
+               }
+               
+            }
+        }
+    }
+
 }
