@@ -116,7 +116,7 @@ header{
     }
 }
 /*estilos mobil y tablet*/
-@media (max-width: 768px){
+@media (max-width: 890px){
     .header{
         height: initial;
 
@@ -139,7 +139,7 @@ header{
                         font-weight: 400;
                         margin-right: initial;
                         font-size: 1rem;
-                        padding: 0.2rem;
+                        padding: 0.3rem;
                     }
                 }
             }
@@ -435,7 +435,7 @@ header{
         }
     }
 }
-@media (max-width: 950px) {
+@media (max-width: 890px) {
     .bodyRegistrarse{
         .headerRegistrarse{
             padding:30px;

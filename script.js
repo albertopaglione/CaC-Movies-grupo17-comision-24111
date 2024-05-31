@@ -1,21 +1,51 @@
-/*const boton = document.getElementById('linkNav conectApi');
-boton.addEventListener('click', llamarAPI);
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NGNlY2RhZDhmMmFlZjdiNjFjN2FjN2JkODk1YzA5NyIsInN1YiI6IjY2NDhhYzc2OGNkOGRlNGRiYTFkNGNkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VKTFT_4Z_QqSLFgDHgy5oE-JDgkbP_6ZXMdQI-kVnFM';
 
-function llamarAPI(){
-    const json =
-        fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}')
-    console.log(json);
+const API_URL = 'https://api.themoviedb.org/3';
 
-}*/
-const options = {
-    method: 'GET',
+let currentPage = 1;
+function llamarAPI(page) {
+  fetch(`${API_URL}/movie/popular?page=${page}`,{
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NGNlY2RhZDhmMmFlZjdiNjFjN2FjN2JkODk1YzA5NyIsInN1YiI6IjY2NDhhYzc2OGNkOGRlNGRiYTFkNGNkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VKTFT_4Z_QqSLFgDHgy5oE-JDgkbP_6ZXMdQI-kVnFM'
-    }
-  };
-  
-  fetch('https://api.themoviedb.org/3/movie/now_playing', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+      Authorization: `Bearer ${API_KEY}`,
+
+    },
+  })
+  .then(response => response.json())
+  .then(data => dibujarDatos(data));
+}
+
+function dibujarDatos(json){
+  const filas = json.results.map(obj => Pelicula (obj));
+  document.querySelector('.peliculasTendencia .peliculas').innerHTML = filas.join('');
+}
+
+function Pelicula(obj){
+  return `
+    <a href="#">
+      <div class="pelicula">
+        <img class="imgTendencia" src="https://image.tmdb.org/t/p/w500/${obj.poster_path}" alt="${obj.title}" loading="lazy">
+        <div class="tituloPelicula">
+        <h4>${obj.title}</h4>
+        </div>
+      </div>
+    </a>
+    `;
+}
+
+function cargarPaginaSiguiente(){
+  currentPage++;
+  llamarAPI(currentPage);
+
+}
+
+function cargarPaginaAnterior(){
+  if (currentPage > 1){
+    currentPage--;
+    llamarAPI(currentPage);
+  }
+}
+
+document.querySelector('.anterior').addEventListener('click', cargarPaginaAnterior);
+document.querySelector('.siguiente').addEventListener('click', cargarPaginaSiguiente);
+
+llamarAPI(currentPage);
