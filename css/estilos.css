@@ -1,9 +1,3 @@
-/* .nunito-<uniquifier> {
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
 *{
     margin: 0;
     padding: 0;
@@ -24,7 +18,7 @@
 ::-webkit-scrollbar-track {
     background: rgb(23, 23, 23);
 }
-   
+
 ::-webkit-scrollbar-thumb {
     background: #9f3647;
 }
@@ -36,7 +30,6 @@ body{
     background-color: black;
     color: white;
 }
-
 header{
     background-color: brown;
     color: white;
@@ -44,7 +37,6 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;
-
     .navegacion{
         display: flex;
         align-items: center;
@@ -52,7 +44,6 @@ header{
         margin-left: 40px;
         margin-right: 40px;
         padding: 1.5rem 0;
-
         .anclaLogo{
             text-decoration: none;
             color: white;
@@ -62,12 +53,10 @@ header{
                 animation: tilt-n-move-shaking 0.25s infinite;
             }
         }
-
         .listaNav{
             list-style: none;
             display: flex;
             align-items: center;
-            
             .listaItem{
                 margin-right: 20px;
                 .linkNav{
@@ -76,15 +65,12 @@ header{
                     font-weight: 700;
                     font-size: 1.1rem;
                     padding: 0.5rem 1rem;
-
                     transition: transform 0.5s, box-shadow 0.5s;
                     &:hover{
                         transform: scale(0.95);
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                        border-radius: 5px;
-
+                        border-radius: 5px;   
                     }
-                    
                 }
                 .linkNav.iniciarSesion{
                     background-color: black;
@@ -95,9 +81,7 @@ header{
                         transform: scale(0.95);
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                         border-radius: 5px;
-
                     }
-                
                 }
                 .linkNav.conectApi{
                     background-color: black;
@@ -108,7 +92,6 @@ header{
                         transform: scale(0.95);
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                         border-radius: 5px;
-
                     }
                 }
             }
@@ -119,21 +102,19 @@ header{
 @media (max-width: 890px){
     .header{
         height: initial;
-
+        
         .navegacion{
             margin-left: 10px;
             margin-right: 10px;
             flex-direction: column;
             row-gap: 20px;
-
             .anclaLogo {
                 font-weight: 700;
                 font-size: 1.2rem;
-
             }
             .listaNav{
                 padding: initial;
-
+                
                 .listaItem{
                     .linkNav{
                         font-weight: 400;
@@ -146,9 +127,12 @@ header{
         }
     }
 }
+
 .main{
+    /*background-color: #181419;*/
+    color: #ffffff;
     .sectionPrincipal{
-        color: white;
+        color: rgb(255, 255, 255);
         background:linear-gradient(to right top, #0000008a, #0000008a), url(../img/banner-bg.jpg);
         background-size: cover;
         background-position: center;
@@ -183,6 +167,7 @@ header{
                 box-shadow: 0 0 10px gray;
             }
         }
+        
     }
     .buscadorPrincipal{
         background-color: #181419;
@@ -334,15 +319,55 @@ header{
             }
         }
     }
+    .peliculasAclamadas{
+        width:80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom:60px;
+        .tituloSection{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .aclamadas{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0px 0px 40px 0px;
+            .peliculaItem{
+                border-radius: 25px;
+                width: 170px;
+                min-width: 170px;
+                font-size: 20px;
+                cursor: pointer;
+                margin-left: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+               
+                .imgAclamada{
+                    border-radius: 5%;
+                    width: 95%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+                
+            }
+           
+        
+        }
+    }
 }
-
 .bodyRegistrarse{
     height: 100vh;
     background: linear-gradient(to right top, #24242473, #24242473),url("../img/bg-register.jpg");
     background-size: cover;
     background-position: center;
     .headerRegistrarse{
-        background-color: transparent;
         color: #ffffff;
         height: 8vh;
         padding: 30px;
@@ -360,16 +385,16 @@ header{
     .main{
         .seccionRegistrarse{
             background-color: rgb(42, 42, 42);
-            width: 40%;
+            width: 30%;
             margin:0 auto;
-            border-radius: 10px;
+            border-radius: 5px;
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 90vh;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             .tituloRegistrarse{
                 font-size: 2.5rem;
                 font-weight: 700;
@@ -382,7 +407,7 @@ header{
                 padding: 40px;
                 input:not(.check,.boton), select{
                     width: 100%;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     height: 40px;
                     padding: 0px 20px;
                     font-size: 1.2rem;
@@ -393,7 +418,7 @@ header{
                     color: white;
                 }
                 .error input:not(.check,.boton),.error select{
-                    border: 2px solid #ff0000;
+                    border: 1px solid #ff0000;
                 }
                 .error-text{
                     color: #ff0000;
@@ -411,7 +436,7 @@ header{
                     }
                 }
                 .boton{
-                    width: 80%;
+                    width: 87%;
                     box-sizing: content-box;
                     background-color: #9f3647;
                     border: 2px solid #9f3647;
@@ -433,6 +458,7 @@ header{
             }
 
         }
+        
     }
 }
 @media (max-width: 890px) {
@@ -477,6 +503,23 @@ header{
                 }
                }
                
+            }
+            .peliculasAclamadas{
+                .tituloSection{
+                    font-size: 2rem;
+                }
+                .aclamadas{
+                    .peliculaItem{
+                        width: 150px;
+                        min-width: 150px;
+                        font-size: 15px;
+                        margin-left: 20px;
+                        .imgAclamada{
+                            width: 90%;
+                            height: 90%;
+                        }
+                    }
+                }
             }
         }
     }
